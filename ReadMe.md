@@ -3,7 +3,7 @@ It is a telegram bot that will give you basic information about a movie.
 
 **Bot's nickname: [@find_my_movie_bot](https://t.me/find_my_movie_bot)** 
 
-###Capability
+### Capability
 Here is a list of what the bot is capable of:
 * With a given movie name, bot asks to choose between several relevant titles 
 (with given year of release)
@@ -16,11 +16,11 @@ genre, release date, rating, description and poster of the movie
 * Better write movie names in English (cause english database is much bigger), but
 if you write title in Russian the bot may find it too.
 
-###Dependencies
+### Dependencies
 Bot uses [TMDB API](https://www.themoviedb.org/documentation/api) to get movie information.
 Also the bot parses google-search to find links where you can watch the movie (or trailer)   
 
-###WorkFlow
+### WorkFlow
 There is some kind of 2 stage dialogue. At the beginning the bot has state  ```free``` 
 and it is ready to receive title. When bot gets the title, it searches for movies 
 with relevant titles using TMDB API and asks the user to choose the exact movie. At that 
