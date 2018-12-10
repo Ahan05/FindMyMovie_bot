@@ -51,7 +51,7 @@ async def google(query):
     loop = asyncio._get_running_loop()
     with concurrent.futures.ThreadPoolExecutor() as pool:
         params = (G_URL, {'q': search_q})
-        req = await loop.run_in_executor(pool, lambda: get(G_URL, params = {'q': search_q}, headers=header))
+        req = await loop.run_in_executor(pool, get, *params)
     text = req.text
     status = req.status_code
 
@@ -166,7 +166,7 @@ async def get_movie_info(movie_name, get_movie_list = False, find_similar = Fals
     data = json.loads(rsp)
 
     if find_similar:
-        URL = 'https://api.themoviedb.org/3/movie/' + str(data['results'][0]['id']) + '/recommendations'
+        URL = 'https://api.themoviedb.org/3/movie/' + str(data['results'][0]['id']) + '/similar'
         async with aiohttp.ClientSession() as session:
             async with session.get(URL, params=params) as resp:
                 rsp = await resp.text()
