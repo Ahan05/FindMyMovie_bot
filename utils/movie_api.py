@@ -9,7 +9,7 @@ import concurrent.futures
 import asyncio
 import functools
 
-G_URL = 'https://www.google.com/search'
+G_URL = 'https://www.google.ru/search'
 DOWNLOAD_FROM = 'https://image.tmdb.org/t/p/w500/'
 URL_MOVIE_INFO = 'https://api.themoviedb.org/3/search/movie'
 URL_MOVIE_SIMILAR = 'https://api.themoviedb.org/3/movie/'
