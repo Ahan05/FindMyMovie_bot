@@ -36,7 +36,7 @@ async def first_enter(message: types.Message, state: FSMContext):
     """
     await Form.free.set()
     print("Message: ", message.text)
-    await state.update_data(last_movie=None)
+    # await state.update_data(last_movie=None)
     if message.text == '/help':
         await bot.send_message(message.chat.id, sentences.HELP_SEN,
                                reply_markup=types.ReplyKeyboardRemove())
